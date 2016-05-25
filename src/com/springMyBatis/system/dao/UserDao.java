@@ -1,5 +1,7 @@
 package com.springMyBatis.system.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -9,7 +11,7 @@ import com.springMyBatis.system.model.User;
 
 public interface UserDao {
 	@Select("select * from user where username=#{username} and password=#{password}")
-	public User getUser(User user);
+	public List<User> getUser(User user);
 	
 	@Insert("insert into user(id,username,password) values(#{id},#{username},#{password})")
     public void addUser(User user);
